@@ -20,17 +20,30 @@ $button_height: 30px;
             padding: 0 20px;
             height: inherit;
             align-items: center;
-            font-size: 24px;
+            font-size: 22px;
+            user-select: none;
+            a {
+                text-decoration: none;
+                color: black;
+                transition: .1s color;
+                &:hover {
+                    color: rgb(87, 87, 87);
+                }
+                &.active {
+                    color: rgb(87, 87, 87);
+                }
+            }
         }
         .localButton {
             position: absolute;
             right: 30px;
-            background-color: grey;
+            background-color: #b5b5b5;
             top: 50%;
             transform: translateY(-50%);
-            border: 1px solid black;
             width: $button_width;
             height: $button_height;
+            border-radius: 8px;
+            user-select: none;
             cursor: pointer;
             .localEn, .localRu {
                 display: inline-flex;
@@ -38,17 +51,20 @@ $button_height: 30px;
                 height: $button_height;
                 justify-content: center;
                 align-items: center;
+                color: #4e4e4e;
+                transition: .2s background-color, .2s color;
                 &.current {
-                    background-color: rgb(121, 84, 84);
+                    background-color: #525252;
+                    color: white;
                 }
             }
-            .line {
-                position: absolute;
-                left: 50%;
-                width: 1px;
-                top: 0px;
-                height: inherit;
-                background-color: black;
+            .localEn {
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+            }
+            .localRu {
+                border-top-right-radius: 6px;
+                border-bottom-right-radius: 6px;
             }
         }
     }
