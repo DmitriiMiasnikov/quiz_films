@@ -1,6 +1,55 @@
+$button_width: 60px;
+$button_height: 30px;
+
 .wrapper {
     grid-area: header;
     display: inline-block;
     height: 80px;
-    background-color: grey;
+    background-color: rgb(231, 231, 231);
+    border-bottom: 1px solid black;
+    .items {
+        width: 1024px;
+        height: inherit;
+        position: relative;
+        margin: 0 auto;
+        .icon {
+            background-color: grey;
+        }
+        .item {
+            display: inline-flex;
+            padding: 0 20px;
+            height: inherit;
+            align-items: center;
+            font-size: 24px;
+        }
+        .localButton {
+            position: absolute;
+            right: 30px;
+            background-color: grey;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 1px solid black;
+            width: $button_width;
+            height: $button_height;
+            cursor: pointer;
+            .localEn, .localRu {
+                display: inline-flex;
+                width: $button_width / 2;
+                height: $button_height;
+                justify-content: center;
+                align-items: center;
+                &.current {
+                    background-color: rgb(121, 84, 84);
+                }
+            }
+            .line {
+                position: absolute;
+                left: 50%;
+                width: 1px;
+                top: 0px;
+                height: inherit;
+                background-color: black;
+            }
+        }
+    }
 }
