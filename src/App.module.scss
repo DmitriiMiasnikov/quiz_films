@@ -1,0 +1,12 @@
+.app {
+  display: grid;
+  position: relative;
+  grid-template-areas: 'header' 'content';
+  grid-template-rows: 80px 1fr;
+  .content {
+    grid-area: content;
+    display: inline-block;
+    background-color: rgb(179, 179, 179);
+  }
+}
+
