@@ -4,13 +4,13 @@
   grid-template-areas: 'header' 'content' 'footer';
   grid-template-rows: 80px 1fr 30px;
   user-select: none;
+  background-color: #e4e4e4;
   .content {
     grid-area: content;
     display: inline-block;
     position: relative;
     width: 1024px;
     margin: 0 auto;
-    background-color: rgb(214, 214, 214);
   }
 }
 

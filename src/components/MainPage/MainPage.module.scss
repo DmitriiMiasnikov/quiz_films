@@ -4,17 +4,28 @@
     flex-wrap: wrap;
     box-sizing: border-box;
     justify-content: space-between;
-    padding: 50px;
+    padding: 50px 50px 10px 50px;
     .item {
         position: relative;
         width: 430px;
         margin-bottom: 50px;
         .picture {
             width: 100%;
+            transition: .2s transform;
+            transform: scale(1);
+            &:hover {
+                transform: scale(1.02);
+                cursor: pointer;
+            }
         }
         .titleBlock {
             text-align: center;
             font-size: 24px;
+            transition: .2s color;
+            &:hover {
+                cursor: pointer;
+                color: grey;
+            }
         }
     }
 }
