@@ -12,10 +12,17 @@
         .point {
             width: 30px;
             height: 30px;
-            background-color: grey;
+            background-color: #e0e0e0;
+            border: 1px solid #b7b7b7;
             border-radius: 50%;
             margin: 0 6px;
             display: inline-block;
+            &.wrong {
+                background-color: red;
+            }
+            &.right {
+                background-color: green;
+            }
         }
     }
     .quiz {
@@ -43,5 +50,13 @@
                 }
             }
         }
+    }
+    .result {
+        position: relative;
+        width: 800px;
+        height: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: grey;
     }
 }

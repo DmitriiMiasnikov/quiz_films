@@ -1,11 +1,24 @@
 import { connect } from "react-redux";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Quiz from './Quiz';
-import {stepUp} from './../../store/quizReducer'
+import { stepUp, checkAnswer } from './../../store/quizReducer';
+import { Redirect } from 'react-router-dom';
 
 const QuizContainer = (props) => {
+    const [answers, setAnswer] = useState(null);
+    useEffect(() => {
+        if (props.currentQuiz) {
+            setAnswer(props.currentQuiz.questions.map(el => null))
+        }
+    }, [])
+    const checkAnswerFunc = (answer, step) => {
+        if (answers) {
+            props.checkAnswer(answer, step, answers)
+            props.stepUp()
+        }
+    }
     return (
-        <Quiz {...props}/>
+        !props.currentQuiz ? <Redirect to='/main' /> : <Quiz {...props} checkAnswer={checkAnswerFunc} />
     )
 }
 
@@ -14,7 +27,8 @@ const mapStateToProps = (state) => {
         local: state.header.local,
         step: state.quiz.step,
         currentQuiz: state.quiz.currentQuiz,
+        answers: state.quiz.answers
     }
 }
 
-export default connect(mapStateToProps, { stepUp })(QuizContainer);
+export default connect(mapStateToProps, { stepUp, checkAnswer })(QuizContainer);
