@@ -2,14 +2,24 @@ const SWITCH_LOCAL = 'SWITCH_LOCAL';
 
 const defaultState = {
     quiz: [
-        {en: 'top 250 films', ru: '250 лучших фильмов', src: 'https://st.kp.yandex.net/im/kadr/3/1/1/kinopoisk.ru-Vikings-3111254.jpg'},
-        {en: 'top 250 films', ru: '250 лучших фильмов', src: 'https://st.kp.yandex.net/im/kadr/3/1/1/kinopoisk.ru-Vikings-3111254.jpg'},
-        {en: 'top 250 films', ru: '250 лучших фильмов', src: 'https://st.kp.yandex.net/im/kadr/3/1/1/kinopoisk.ru-Vikings-3111254.jpg'},
-        {en: 'top 250 films', ru: '250 лучших фильмов', src: 'https://st.kp.yandex.net/im/kadr/3/1/1/kinopoisk.ru-Vikings-3111254.jpg'},
-        {en: 'top 250 films', ru: '250 лучших фильмов', src: 'https://st.kp.yandex.net/im/kadr/3/1/1/kinopoisk.ru-Vikings-3111254.jpg'},
-        {en: 'top 250 films', ru: '250 лучших фильмов', src: 'https://st.kp.yandex.net/im/kadr/3/1/1/kinopoisk.ru-Vikings-3111254.jpg'},
-        {en: 'top 250 films', ru: '250 лучших фильмов', src: 'https://st.kp.yandex.net/im/kadr/3/1/1/kinopoisk.ru-Vikings-3111254.jpg'},
-        {en: 'top 250 films', ru: '250 лучших фильмов', src: 'https://st.kp.yandex.net/im/kadr/3/1/1/kinopoisk.ru-Vikings-3111254.jpg'},
+        {
+            name: 'top_250_films',
+            en: 'top 250 films', 
+            ru: '250 лучших фильмов', 
+            src: 'https://st.kp.yandex.net/im/kadr/3/1/1/kinopoisk.ru-Vikings-3111254.jpg',
+            questions: [
+                { 
+                    options: ['vikings', 'some other', 'some else', 'some more'],
+                    currect: 'vikings',
+                    src: 'https://st.kp.yandex.net/im/kadr/3/1/1/kinopoisk.ru-Vikings-3111254.jpg'
+                },
+                { 
+                    options: ['vikings', 'some other', 'some else', 'some more'],
+                    currect: 'vikings',
+                    src: 'https://st.kp.yandex.net/im/kadr/3/1/1/kinopoisk.ru-Vikings-3111254.jpg'
+                }
+            ]
+        },
     ]
 }
 

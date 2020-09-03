@@ -1,0 +1,47 @@
+.wrapper {
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 50px 50px 50px;
+    width: 100%;
+    .progress {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        .point {
+            width: 30px;
+            height: 30px;
+            background-color: grey;
+            border-radius: 50%;
+            margin: 0 6px;
+            display: inline-block;
+        }
+    }
+    .quiz {
+        position: relative;
+        width: 800px;
+        left: 50%;
+        transform: translateX(-50%);
+        img {
+            width: 100%;
+            position: relative;
+
+        }
+        .questions {
+            position: relative;
+            .question {
+                background-color: grey;
+                transition: .2s background-color;
+                font-size: 32px;
+                box-sizing: border-box;
+                padding-left: 20px;
+                margin-bottom: 5px;
+                &:hover {
+                    cursor: pointer;
+                    background-color: rgb(172, 172, 172);
+                }
+            }
+        }
+    }
+}

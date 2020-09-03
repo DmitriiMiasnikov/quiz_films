@@ -3,6 +3,7 @@ import styles from './App.module.scss';
 import Header from './components/Header/HeaderContainer';
 import MainPage from './components/MainPage/MainPageContainer';
 import Footer from './components/Footer/FooterContainer';
+import Quiz from './components/Quiz/QuizContainer';
 import { Route, Redirect } from 'react-router-dom';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <div className = {styles.content}>
         <Redirect from='/' to='/main' />
         <Route path='/main' render={() => <MainPage />} />
+        <Route path='/quiz/:name?' render={() => <Quiz />} />
       </div>
       <Footer />
     </div>
