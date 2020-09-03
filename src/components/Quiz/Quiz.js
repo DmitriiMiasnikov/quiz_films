@@ -4,7 +4,9 @@ import classnames from 'classnames';
 
 const Quiz = (props) => {
     return (
-        <div className={styles.wrapper}>
+        <div className={classnames(styles.wrapper, {
+            [styles.hide]: props.hidePrevImage
+        })}>
             <div className={styles.progress}>
                 {
                     props.currentQuiz.questions.map((el, i) => {
@@ -16,9 +18,7 @@ const Quiz = (props) => {
                 }
             </div>
             {
-                props.currentQuiz && props.step < props.currentQuiz.questions.length ? <div className={classnames(styles.quiz, {
-                    [styles.hide]: props.hidePrevImage
-                })}>
+                props.currentQuiz && props.step < props.currentQuiz.questions.length ? <div className={classnames(styles.quiz)}>
                     <img src={props.currentQuiz.questions[props.step].src} className={styles.image}></img>
                     <div className={styles.questions}>
                         {
@@ -49,6 +49,9 @@ const Quiz = (props) => {
                                 </div>
                             })
                         }
+                        <div className = {styles.resultText}>
+                            {props.resultText[props.local]}
+                        </div>
                     </div>
             }
         </div>

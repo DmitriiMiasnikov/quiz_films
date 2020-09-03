@@ -1,11 +1,13 @@
 const STEP_UP = 'STEP_UP';
 const GET_QUIZ = 'GET_QUIZ';
 const CHECK_ANSWER = 'CHECK_ANSWER';
+const RESULT_TEXT = 'RESULT_TEXT';
 
 const defaultState = {
     step: 0,
     currentQuiz: null,
-    answers: null
+    answers: null,
+    resultText: null,
 }
 
 const quizReducer = (state = defaultState, action) => {
@@ -29,6 +31,12 @@ const quizReducer = (state = defaultState, action) => {
                 })
             }
         }
+        case (RESULT_TEXT): {
+            return { ...state, resultText: {
+                ru: `Верно завершено ${action.right} из ${action.all}.`,
+                en: `Right answers ${action.right} from ${action.all}.`
+            } }
+        }
         default: break;
     }
     return state;
@@ -41,6 +49,9 @@ export const getQuiz = (currentQuiz) => {
 }
 export const checkAnswer = (answer, step, answersArr, item) => {
     return { type: CHECK_ANSWER, answer, step, answersArr, item }
+}
+export const getResultText = (right, all) => {
+    return { type: RESULT_TEXT, right, all }
 }
 
 export default quizReducer;
