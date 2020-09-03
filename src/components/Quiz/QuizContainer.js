@@ -6,19 +6,25 @@ import { Redirect } from 'react-router-dom';
 
 const QuizContainer = (props) => {
     const [answers, setAnswer] = useState(null);
+    const [hidePrevImage, setHidePrevImage] = useState(false);
     useEffect(() => {
         if (props.currentQuiz) {
             setAnswer(props.currentQuiz.questions.map(el => null))
         }
     }, [])
-    const checkAnswerFunc = (answer, step) => {
+    const checkAnswerFunc = async (answer, step, item) => {
         if (answers) {
-            props.checkAnswer(answer, step, answers)
+            props.checkAnswer(answer, step, answers, item)
+            await new Promise(res => setTimeout(res, 500))
+            setHidePrevImage(true)
             props.stepUp()
+            await new Promise(res => setTimeout(res, 500))
+            setHidePrevImage(false)
         }
     }
     return (
-        !props.currentQuiz ? <Redirect to='/main' /> : <Quiz {...props} checkAnswer={checkAnswerFunc} />
+        !props.currentQuiz ? <Redirect to='/main' /> : <Quiz {...props}
+            checkAnswer={checkAnswerFunc} hidePrevImage={hidePrevImage} />
     )
 }
 

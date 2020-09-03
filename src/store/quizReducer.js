@@ -24,8 +24,8 @@ const quizReducer = (state = defaultState, action) => {
                     } else if (i < action.step) {
                         return state.answers[i]
                     } else if (action.answer === state.currentQuiz.questions[action.step].currect) {
-                        return true
-                    } else return false
+                        return [true, action.item]
+                    } else return [false, action.item]
                 })
             }
         }
@@ -39,8 +39,8 @@ export const stepUp = () => {
 export const getQuiz = (currentQuiz) => {
     return { type: GET_QUIZ, currentQuiz }
 }
-export const checkAnswer = (answer, step, answersArr) => {
-    return { type: CHECK_ANSWER, answer, step, answersArr }
+export const checkAnswer = (answer, step, answersArr, item) => {
+    return { type: CHECK_ANSWER, answer, step, answersArr, item }
 }
 
 export default quizReducer;

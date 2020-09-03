@@ -13,8 +13,8 @@ const defaultState = {
                     currect: 'vikings',
                     src: 'https://st.kp.yandex.net/im/kadr/3/1/1/kinopoisk.ru-Vikings-3111254.jpg'
                 },
-                { 
-                    options: ['vikings', 'some other', 'some else', 'some more'],
+                {
+                    options: ['vikings', 'gfhasfsd', 'dfcaasd', 'sss'],
                     currect: 'vikings',
                     src: 'https://st.kp.yandex.net/im/kadr/3/1/1/kinopoisk.ru-Vikings-3111254.jpg'
                 }

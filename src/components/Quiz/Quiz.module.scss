@@ -1,7 +1,7 @@
 .wrapper {
     position: relative;
     box-sizing: border-box;
-    padding: 0 50px 50px 50px;
+    padding: 0 50px 60px 50px;
     width: 100%;
     .progress {
         position: relative;
@@ -10,6 +10,7 @@
         align-items: center;
         height: 60px;
         .point {
+            position: relative;
             width: 30px;
             height: 30px;
             background-color: #e0e0e0;
@@ -17,11 +18,23 @@
             border-radius: 50%;
             margin: 0 6px;
             display: inline-block;
-            &.wrong {
-                background-color: red;
-            }
-            &.right {
-                background-color: green;
+            box-sizing: border-box;
+            .image {
+                position: absolute;
+                left: -1px;
+                top: -1px;
+                width: 30px;
+                height: 30px;
+                opacity: 0;
+                transition: .2s opacity;
+                &.wrong {
+                    opacity: 1;
+                    background-image: url('./../../assets/img/cross.svg');
+                }
+                &.right {
+                    opacity: 1;
+                    background-image: url('./../../assets/img/tick.svg');
+                }
             }
         }
     }
@@ -33,7 +46,6 @@
         img {
             width: 100%;
             position: relative;
-
         }
         .questions {
             position: relative;
@@ -50,13 +62,53 @@
                 }
             }
         }
+        transition: .5s opacity, .5s visibility;
+        &.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
     }
     .result {
         position: relative;
-        width: 800px;
-        height: 200px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: grey;
+        .item {
+            position: relative;
+            height: 150px;
+            margin-bottom: 10px;
+            background-color: #d0d0d0;
+            img {
+                display: inline-block;
+                height: 100%;
+            }
+            .questions {
+                position: relative;
+                display: inline-block;
+                margin-left: 60px;
+                top: -12px;
+                .question {
+                    position: relative;
+                    transition: .2s background-color;
+                    font-size: 24px;
+                    margin-bottom: 5px;
+                    box-sizing: border-box;
+                    .tickCross {
+                        display: inline-block;
+                        position: absolute;
+                        width: 30px;
+                        height: 30px;
+                        left: -40px;
+                        top: 4px;
+                        &.wrong {
+                            background-image: url('./../../assets/img/cross.svg');
+                        }
+                        &.right {
+                            background-image: url('./../../assets/img/tick.svg');
+                        }
+                    }
+                    .text {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
     }
 }
