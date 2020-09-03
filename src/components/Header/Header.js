@@ -13,7 +13,7 @@ const Header = (props) => {
                 {
                     props.menuItems.map((el, i) => {
                         return <div className={styles.item} key={i}>
-                            <NavLink to={`/${el[props.local].toLowerCase().split(' ').join('_')}`} activeClassName={styles.active}>
+                            <NavLink to={`/${el.en.toLowerCase().split(' ').join('_')}`} activeClassName={styles.active}>
                                 {props.local === 'en' ? el.en : el.ru}
                             </NavLink>
                         </div>

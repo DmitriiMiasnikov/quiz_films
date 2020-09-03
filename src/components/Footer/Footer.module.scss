@@ -1,0 +1,29 @@
+.wrapper {
+    grid-area: footer;
+    background-color: #e7e7e7;
+    height: inherit;
+    .content {
+        position: relative;
+        width: 1024px;
+        height: 100%;
+        margin: 0 auto;
+        .info {
+            font-size: 14px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .top {
+            position: absolute;
+            right: 15px;
+            width: 50px;
+            top: -60px;
+            transform: scale(1);
+            transition: .1s transform;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

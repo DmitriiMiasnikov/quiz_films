@@ -6,7 +6,8 @@ $button_height: 30px;
     display: inline-block;
     height: 80px;
     background-color: rgb(231, 231, 231);
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #6f6f6f;
+    box-sizing: border-box;
     .items {
         width: 1024px;
         height: inherit;
@@ -21,7 +22,6 @@ $button_height: 30px;
             height: inherit;
             align-items: center;
             font-size: 22px;
-            user-select: none;
             a {
                 text-decoration: none;
                 color: black;
@@ -43,7 +43,6 @@ $button_height: 30px;
             width: $button_width;
             height: $button_height;
             border-radius: 8px;
-            user-select: none;
             cursor: pointer;
             .localEn, .localRu {
                 display: inline-flex;
