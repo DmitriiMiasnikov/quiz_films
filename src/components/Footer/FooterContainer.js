@@ -12,7 +12,8 @@ const FooterContainer = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        local: state.header.local
+        local: state.header.local,
+        hideArrow: state.quiz.hideArrow
     }
 }
 export default connect(mapStateToProps, {})(FooterContainer);

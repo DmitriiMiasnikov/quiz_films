@@ -11,7 +11,8 @@ const defaultState = {
     currentQuiz: null,
     answers: null,
     resultText: null,
-    inactiveButtons: false
+    inactiveButtons: false,
+    hideArrow: false,
 }
 const quizReducer = (state = defaultState, action) => {
     switch (action.type) {
@@ -22,7 +23,7 @@ const quizReducer = (state = defaultState, action) => {
             return { ...state, step: state.step += 1 }
         }
         case (GET_QUIZ): {
-            return { ...state, currentQuiz: action.currentQuiz }
+            return { ...state, currentQuiz: action.currentQuiz, hideArrow: true }
         }
         case (RANDOMIZE_OPTIONS): {
             return { ...state, currentQuiz: action.currentQuiz }

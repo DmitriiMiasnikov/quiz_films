@@ -20,7 +20,6 @@ const App = (props) => {
       <Header />
       <div className = {styles.content}>
         <Redirect from='/' to='/main' />
-        <Route path='/main' render={() => <MainPage />} />
         <Route path='/all_quiz' render={() => <QuizList />} />
         <Route path='/films' render={() => <QuizList />} />
         <Route path='/serials' render={() => <QuizList />} />

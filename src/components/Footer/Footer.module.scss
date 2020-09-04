@@ -15,17 +15,21 @@
             transform: translateY(-50%);
             color: #717171;
         }
-        .top {
+        .arrow {
             position: absolute;
             right: 15px;
             width: 50px;
             top: -60px;
             cursor: pointer;
             transform: scale(1);
-            transition: .1s transform;
+            transition: .1s transform, .1s opacity, .1s visibility;
             border-radius: 50%;
             &:hover {
                 transform: scale(1.1);
+            }
+            &.hide {
+                visibility: hidden;
+                opacity: 0;
             }
         }
     }

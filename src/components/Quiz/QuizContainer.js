@@ -33,7 +33,7 @@ const QuizContainer = (props) => {
             props.toggleInactiveButtons(true)
             await new Promise(res => setTimeout(res, 300))
             setHidePrevImage(true)
-            await new Promise(res => setTimeout(res, 300))
+            await new Promise(res => setTimeout(res, 350))
             props.stepUp()
             await new Promise(res => setTimeout(res, 300))
             setHidePrevImage(false)
