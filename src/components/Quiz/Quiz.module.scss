@@ -44,6 +44,9 @@
             width: 800px;
             left: 50%;
             transform: translateX(-50%);
+            &.inactive {
+                pointer-events: none;
+            }
             img {
                 width: 100%;
                 position: relative;

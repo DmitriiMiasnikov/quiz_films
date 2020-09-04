@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import React, { useState, useEffect } from 'react';
 import Quiz from './Quiz';
-import { stepUp, checkAnswer, getResultText } from './../../store/quizReducer';
+import { stepUp, checkAnswer, getResultText, toggleInactiveButtons } from './../../store/quizReducer';
 import { Redirect } from 'react-router-dom';
 
 const QuizContainer = (props) => {
@@ -30,12 +30,14 @@ const QuizContainer = (props) => {
     const checkAnswerFunc = async (answer, step, item) => {
         if (answers) {
             props.checkAnswer(answer, step, answers, item)
+            props.toggleInactiveButtons(true)
             await new Promise(res => setTimeout(res, 300))
             setHidePrevImage(true)
             await new Promise(res => setTimeout(res, 300))
             props.stepUp()
             await new Promise(res => setTimeout(res, 300))
             setHidePrevImage(false)
+            props.toggleInactiveButtons(false)
         }
     }
     useEffect(() => {
@@ -59,7 +61,8 @@ const mapStateToProps = (state) => {
         currentQuiz: state.quiz.currentQuiz,
         answers: state.quiz.answers,
         resultText: state.quiz.resultText,
+        inactiveButtons: state.quiz.inactiveButtons,
     }
 }
 
-export default connect(mapStateToProps, { stepUp, checkAnswer, getResultText })(QuizContainer);
+export default connect(mapStateToProps, { stepUp, checkAnswer, getResultText, toggleInactiveButtons })(QuizContainer);

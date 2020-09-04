@@ -19,7 +19,9 @@ const Quiz = (props) => {
             [styles.hide]: props.hidePrevImage
         })}>
             {
-                props.currentQuiz && props.step < props.currentQuiz.questions.length ? <div className={classnames(styles.quiz)}>
+                props.currentQuiz && props.step < props.currentQuiz.questions.length ? <div className={classnames(styles.quiz, {
+                    [styles.inactive]: props.inactiveButtons
+                })}>
                     <img src={props.currentQuiz.questions[props.step].src} className={styles.image}></img>
                     <div className={styles.questions}>
                         {
