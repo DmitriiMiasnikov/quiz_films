@@ -1,4 +1,7 @@
-const SWITCH_LOCAL = 'SWITCH_LOCAL';
+const GET_ALL_QUIZ = 'GET_ALL_QUIZ';
+const GET_FILMS_QUIZ = 'GET_FILMS_QUIZ';
+const GET_SERIALS_QUIZ = 'GET_SERIALS_QUIZ';
+const SET_QUIZ_LIST = 'SET_QUIZ_LIST';
 
 const defaultState = {
     quiz: [
@@ -26,7 +29,7 @@ const defaultState = {
             en: 'science fiction series', 
             ru: 'фантастические сериалы',
             type: 'serials',
-            src: 'https://st.kp.yandex.net/im/kadr/3/1/1/kinopoisk.ru-Vikings-3111254.jpg',
+            src: 'https://st.kp.yandex.net/im/kadr/2/8/9/kinopoisk.ru-The-Expanse-2891914.jpg',
             questions: [
                 {
                     options: ['Sliders', 'Quantum Leap', 'Parallels', 'Back to the Future'],
@@ -72,6 +75,11 @@ const defaultState = {
                     options: ['Battlestar Galactica', 'Caprica', 'The 100', 'The Expanse'],
                     currect: 'Battlestar Galactica',
                     src: 'https://st.kp.yandex.net/im/kadr/2/0/9/kinopoisk.ru-Battlestar-Galactica-2094426.jpg'
+                },
+                {
+                    options: ['The Expanse', 'Altered Carbon', 'Dark Matter', 'Firefly'],
+                    currect: 'The Expanse',
+                    src: 'https://st.kp.yandex.net/im/kadr/2/6/9/kinopoisk.ru-The-Expanse-2694897.jpg'
                 },
             ]
         },
@@ -188,20 +196,42 @@ const defaultState = {
                 },
             ]
         },
-    ]
+    ],
+    quizAll: [],
+    quizFilms: [],
+    quizSerials: [],
+    quizList: null,
 }
 
 const mainPageReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case (SWITCH_LOCAL): {
-            return { ...state, local: state.local === 'en' ? 'ru' : 'en' }
+        case (GET_ALL_QUIZ): {
+            return { ...state, quizAll: state.quiz }
+        }
+        case (GET_FILMS_QUIZ): {
+            return { ...state, quizFilms: state.quiz.filter(el => el.type === 'films' ) }
+        }
+        case (GET_SERIALS_QUIZ): {
+            return { ...state, quizSerials: state.quiz.filter(el => el.type === 'serials' ) }
+        }
+        case (SET_QUIZ_LIST): {
+            return { ...state, quizList: action.quiz }
         }
         default: break;
     }
     return state;
 }
-export const switchLocal = () => {
-    return { type: SWITCH_LOCAL }
+export const getAllQuiz = () => {
+    return { type: GET_ALL_QUIZ }
+}
+export const getFilmsQuiz = () => {
+    return { type: GET_FILMS_QUIZ }
+}
+export const getSerialsQuiz = () => {
+    return { type: GET_SERIALS_QUIZ }
+}
+export const setQuizList = (quiz) => {
+    return { type: SET_QUIZ_LIST, quiz }
 }
 
 export default mainPageReducer;

@@ -12,14 +12,16 @@ const Header = (props) => {
                 </div>
                 {
                     props.menuItems.map((el, i) => {
-                        return <div className={styles.item} key={i}>
-                            <NavLink to={`/${el.en.toLowerCase().split(' ').join('_')}`} activeClassName={styles.active}>
+                        return <div className={styles.item} key={i}
+                            onClick={() => props.setQuizListFunc(`${el.en.toLowerCase().split(' ').join('_')}`)} >
+                            <NavLink to={`/${el.en.toLowerCase().split(' ').join('_')}`}
+                                activeClassName={styles.active}>
                                 {props.local === 'en' ? el.en : el.ru}
                             </NavLink>
                         </div>
                     })
                 }
-                <div className={styles.localButton} onClick = {() => props.switchLocal()}>
+                <div className={styles.localButton} onClick={() => props.switchLocal()}>
                     <div className={classnames(styles.localEn, { [styles.current]: props.local === 'en' })}>en</div>
                     <div className={classnames(styles.localRu, { [styles.current]: props.local === 'ru' })}>ru</div>
                 </div>

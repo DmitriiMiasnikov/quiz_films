@@ -1,10 +1,14 @@
 import React from 'react';
 import Header from './Header';
 import {connect} from 'react-redux';
-import { switchLocal } from './../../store/headerReducer'
+import { switchLocal } from './../../store/headerReducer';
+import { setQuizList } from './../../store/mainPageReducer';
 
 const HeaderContainer = (props) => {
-    return <Header {...props} />
+    const setQuizListFunc = (quiz) => {
+        props.setQuizList(quiz)
+    }
+    return <Header {...props} setQuizListFunc = {setQuizListFunc}/>
 }
 
 const mapStateToProps = (state) => {
@@ -13,4 +17,4 @@ const mapStateToProps = (state) => {
         local: state.header.local
     }
 }
-export default connect(mapStateToProps, { switchLocal })(HeaderContainer);
+export default connect(mapStateToProps, { switchLocal, setQuizList })(HeaderContainer);
