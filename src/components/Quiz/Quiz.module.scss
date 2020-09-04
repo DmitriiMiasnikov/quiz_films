@@ -13,7 +13,7 @@
             position: relative;
             width: 30px;
             height: 30px;
-            background-color: #e0e0e0;
+            background-color: #E8F4FA;
             border: 1px solid #b7b7b7;
             border-radius: 50%;
             margin: 0 6px;
@@ -54,7 +54,7 @@
             .questions {
                 position: relative;
                 .question {
-                    background-color: grey;
+                    background-color: #C2C0CD;
                     transition: .2s background-color;
                     font-size: 32px;
                     box-sizing: border-box;
@@ -62,7 +62,7 @@
                     margin-bottom: 5px;
                     &:hover {
                         cursor: pointer;
-                        background-color: rgb(172, 172, 172);
+                        background-color: #7585B6;
                     }
                 }
             }
@@ -73,7 +73,7 @@
                 position: relative;
                 
                 margin-bottom: 10px;
-                background-color: #d0d0d0;
+                background-color: #D5D1D2;
                 img {
                     display: block;
                     width: 300px;

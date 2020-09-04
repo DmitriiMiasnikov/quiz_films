@@ -5,16 +5,12 @@ import { NavLink } from 'react-router-dom';
 const MainPage = (props) => {
     return (
         <div className={styles.wrapper}>
-            {
-                props.quiz.map((el, i) => {
-                    return <div className={styles.item} key={i}>
-                        <NavLink to={`/quiz/${el.name}`} onClick = {props.getQuiz(el)}><img src={el.src} className={styles.picture} ></img></NavLink>
-                        <div className={styles.titleBlock}>
-                            <NavLink to={`/quiz/${el.name}`} onClick = {props.getQuiz(el)}>{el[props.local]}</NavLink>
-                        </div>
-                    </div>
-                })
-            }
+            <div className={styles.title}>Welcome to the site.</div>
+            <div className={styles.subtitle}>Test your knowledge of your favorite films.</div>
+            <div className={styles.counter}>total tests: {props.counterTests()}</div>
+            <div className={styles.buttonRandomTest} onClick = {() => props.getRandomQuiz()}>
+            <NavLink to={`/quiz/${() => props.getRandomQuiz()}`}>start random test</NavLink>
+                </div>
         </div>
     )
 }
