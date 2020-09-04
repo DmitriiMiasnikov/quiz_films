@@ -2,6 +2,8 @@ const STEP_UP = 'STEP_UP';
 const GET_QUIZ = 'GET_QUIZ';
 const CHECK_ANSWER = 'CHECK_ANSWER';
 const RESULT_TEXT = 'RESULT_TEXT';
+const CLEAR = 'CLEAR';
+const RANDOMIZE_OPTIONS = 'RANDOMIZE_OPTIONS'
 
 const defaultState = {
     step: 0,
@@ -9,13 +11,18 @@ const defaultState = {
     answers: null,
     resultText: null,
 }
-
 const quizReducer = (state = defaultState, action) => {
     switch (action.type) {
+        case (CLEAR): {
+            return { ...defaultState }
+        }
         case (STEP_UP): {
             return { ...state, step: state.step += 1 }
         }
         case (GET_QUIZ): {
+            return { ...state, currentQuiz: action.currentQuiz }
+        }
+        case (RANDOMIZE_OPTIONS): {
             return { ...state, currentQuiz: action.currentQuiz }
         }
         case (CHECK_ANSWER): {
@@ -41,10 +48,16 @@ const quizReducer = (state = defaultState, action) => {
     }
     return state;
 }
+export const clear = () => {
+    return { type: CLEAR }
+}
 export const stepUp = () => {
     return { type: STEP_UP }
 }
 export const getQuiz = (currentQuiz) => {
+    return { type: GET_QUIZ, currentQuiz }
+}
+export const randomizeOptions = (currentQuiz) => {
     return { type: GET_QUIZ, currentQuiz }
 }
 export const checkAnswer = (answer, step, answersArr, item) => {

@@ -7,11 +7,26 @@ import { Redirect } from 'react-router-dom';
 const QuizContainer = (props) => {
     const [answers, setAnswer] = useState(null);
     const [hidePrevImage, setHidePrevImage] = useState(false);
+    const shuffleAnswers = (currentQuiz) => {
+        const shuffleFunc = (arr) => arr.map(a => [Math.random(), a])
+            .sort((a, b) => a[0] - b[0]).map(a => a[1]);
+        const shuffledArr = currentQuiz;
+        shuffledArr.questions = shuffleFunc(shuffledArr.questions);
+        shuffledArr.questions = shuffledArr.questions.map(el => {
+            const shuffleFunc = (arr) => arr.map(a => [Math.random(), a])
+                .sort((a, b) => a[0] - b[0]).map(a => a[1]);
+            el.options = shuffleFunc(el.options)
+            return el
+        })
+        return shuffledArr
+    }
     useEffect(() => {
         if (props.currentQuiz) {
             setAnswer(props.currentQuiz.questions.map(el => null))
+            shuffleAnswers(props.currentQuiz)
         }
     }, [])
+
     const checkAnswerFunc = async (answer, step, item) => {
         if (answers) {
             props.checkAnswer(answer, step, answers, item)
