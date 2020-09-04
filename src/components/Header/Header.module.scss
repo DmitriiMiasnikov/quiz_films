@@ -13,9 +13,6 @@ $button_height: 30px;
         height: inherit;
         position: relative;
         margin: 0 auto;
-        .icon {
-            background-color:#647387;
-        }
         .item {
             display: inline-flex;
             padding: 0 20px;
@@ -24,13 +21,22 @@ $button_height: 30px;
             font-size: 22px;
             a {
                 text-decoration: none;
-                color: black;
-                transition: .1s color;
+                color: #202435;
+                transition: .1s text-shadow;
                 &:hover {
-                    color: rgb(87, 87, 87);
+                    text-shadow: 1px 1px 8px #2e344d;
                 }
                 &.active {
-                    color: rgb(87, 87, 87);
+                    color: #40486D;
+                }
+            }
+        }
+        .icon {
+            background-color:#647387;
+            a {
+                color: rgb(221, 221, 221);
+                &:hover {
+                    text-shadow: 1px 1px 5px #d8d8d8;
                 }
             }
         }
