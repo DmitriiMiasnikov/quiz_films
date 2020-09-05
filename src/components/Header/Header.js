@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Header.module.scss';
 import classnames from 'classnames';
 import { NavLink } from 'react-router-dom';
+import LocalButton from './LocalButton/LocalButton';
 
 const Header = (props) => {
     return (
@@ -21,10 +22,7 @@ const Header = (props) => {
                         </div>
                     })
                 }
-                <div className={styles.localButton} onClick={() => props.switchLocal()}>
-                    <div className={classnames(styles.localEn, { [styles.current]: props.local === 'en' })}>en</div>
-                    <div className={classnames(styles.localRu, { [styles.current]: props.local === 'ru' })}>ru</div>
-                </div>
+                <LocalButton switchLocal={props.switchLocal} local={props.local} />
             </div>
 
         </div>

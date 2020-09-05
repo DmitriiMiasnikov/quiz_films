@@ -1,0 +1,35 @@
+$button_width: 60px;
+$button_height: 30px;
+
+.localButton {
+    position: absolute;
+    right: 30px;
+    background-color: #B4B9C3;
+    top: 50%;
+    transform: translateY(-50%);
+    width: $button_width;
+    height: $button_height;
+    border-radius: 8px;
+    cursor: pointer;
+    .localEn, .localRu {
+        display: inline-flex;
+        width: $button_width / 2;
+        height: $button_height;
+        justify-content: center;
+        align-items: center;
+        color: #4e4e4e;
+        transition: .2s background-color, .2s color;
+        &.current {
+            background-color: #647387;
+            color: white;
+        }
+    }
+    .localEn {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+    .localRu {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+}

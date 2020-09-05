@@ -3,41 +3,6 @@
     box-sizing: border-box;
     padding: 0 50px 60px 50px;
     width: 100%;
-    .progress {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 60px;
-        .point {
-            position: relative;
-            width: 30px;
-            height: 30px;
-            background-color: #E8F4FA;
-            border: 1px solid #b7b7b7;
-            border-radius: 50%;
-            margin: 0 6px;
-            display: inline-block;
-            box-sizing: border-box;
-            .image {
-                position: absolute;
-                left: -1px;
-                top: -1px;
-                width: 30px;
-                height: 30px;
-                opacity: 0;
-                transition: .2s opacity;
-                &.wrong {
-                    opacity: 1;
-                    background-image: url('./../../assets/img/cross.svg');
-                }
-                &.right {
-                    opacity: 1;
-                    background-image: url('./../../assets/img/tick.svg');
-                }
-            }
-        }
-    }
     .content {
         .quiz {
             position: relative;
@@ -71,55 +36,6 @@
                         background-color: #40be34;
                     }
                 }
-            }
-        }
-        .result {
-            position: relative;
-            .item {
-                position: relative;
-                
-                margin-bottom: 10px;
-                background-color: #D5D1D2;
-                img {
-                    display: block;
-                    width: 300px;
-                }
-                .questions {
-                    position: absolute;
-                    left: 360px;
-                    top: 0px;
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    .question {
-                        position: relative;
-                        transition: .2s background-color;
-                        font-size: 24px;
-                        box-sizing: border-box;
-                        .tickCross {
-                            display: inline-block;
-                            position: absolute;
-                            width: 30px;
-                            height: 30px;
-                            left: -40px;
-                            top: 2px;
-                            &.wrong {
-                                background-image: url('./../../assets/img/cross.svg');
-                            }
-                            &.right {
-                                background-image: url('./../../assets/img/tick.svg');
-                            }
-                        }
-                        .text {
-                            display: inline-block;
-                        }
-                    }
-                }
-            }
-            .resultText {
-                text-align: center;
-                font-size: 24px;
             }
         }
         transition: .5s opacity, .5s visibility;
