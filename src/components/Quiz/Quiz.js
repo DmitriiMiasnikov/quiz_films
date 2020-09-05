@@ -42,7 +42,7 @@ const Quiz = (props) => {
                                                 return <div className={styles.question} key={item}>
                                                     <div className={classnames(styles.tickCross, {
                                                         [styles.wrong]: props.answers[i][1] === item && props.answers[i][0] === false,
-                                                        [styles.right]: props.answers[i][1] === item && props.answers[i][0]
+                                                        [styles.right]: props.currentQuiz.questions[i].currect === el
                                                     })}></div>
                                                     <div className={styles.text}>{el}</div>
                                                 </div>
