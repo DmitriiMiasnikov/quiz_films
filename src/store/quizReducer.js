@@ -10,7 +10,7 @@ const GET_RANDOM_QUIZ = 'GET_RANDOM_QUIZ';
 const defaultState = {
     step: 0,
     currentQuiz: null,
-    answers: null,
+    answers: [],
     resultText: null,
     inactiveButtons: false,
     hideArrow: false,

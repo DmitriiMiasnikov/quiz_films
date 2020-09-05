@@ -64,6 +64,12 @@
                         cursor: pointer;
                         background-color: #7585B6;
                     }
+                    &.wrong {
+                        background-color: #ff5252;
+                    }
+                    &.right {
+                        background-color: #40be34;
+                    }
                 }
             }
         }

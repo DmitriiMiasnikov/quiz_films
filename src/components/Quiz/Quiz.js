@@ -9,8 +9,8 @@ const Quiz = (props) => {
                 {
                     props.currentQuiz.questions.map((el, i) => {
                         return <div className={styles.point} key={i}><div className={classnames(styles.image, {
-                            [styles.wrong]: !props.answers ? false : !props.answers[i] ? false : props.answers[i][0] === false,
-                            [styles.right]: !props.answers ? false : !props.answers[i] ? false : props.answers[i][0] === true
+                            [styles.wrong]: !props.answers[i] ? false : props.answers[i][0] === false,
+                            [styles.right]: !props.answers[i] ? false : props.answers[i][0] === true
                         })}></div></div>
                     })
                 }
