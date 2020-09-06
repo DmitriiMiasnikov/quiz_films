@@ -7,13 +7,13 @@ import Quiz from './components/Quiz/QuizContainer';
 import { Route, Redirect } from 'react-router-dom';
 import QuizList from './components/QuizList/QuizListContainer';
 import { connect } from "react-redux";
-import { getAllQuiz, getFilmsQuiz, getSerialsQuiz } from './store/mainPageReducer'
+import { getAllQuizThunk, getFilmsQuizThunk, getSerialsQuizThunk } from './store/mainPageReducer'
 
 const App = (props) => {
   useEffect(() => {
-      props.getAllQuiz()
-      props.getFilmsQuiz()
-      props.getSerialsQuiz()
+      props.getAllQuizThunk()
+      props.getFilmsQuizThunk()
+      props.getSerialsQuizThunk()
   }, [])
   return (
     <div className={styles.app}>
@@ -38,4 +38,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { getAllQuiz, getFilmsQuiz, getSerialsQuiz })(App);
+export default connect(mapStateToProps, { getAllQuizThunk, getFilmsQuizThunk, getSerialsQuizThunk })(App);
