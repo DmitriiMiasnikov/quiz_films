@@ -3,8 +3,7 @@ import thunkMiddleware from 'redux-thunk';
 import headerReducer from './headerReducer';
 import mainPageReducer from './mainPageReducer';
 import quizReducer from './quizReducer';
-
-const { combineReducers, createStore, applyMiddleware } = require("redux");
+import { combineReducers, createStore, applyMiddleware } from "redux";
 
 const reducers = combineReducers({
     header: headerReducer,
