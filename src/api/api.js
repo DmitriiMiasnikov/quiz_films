@@ -1,7 +1,7 @@
 import * as axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'https://nodejs.amyasnikov.pro/api/'
+    baseURL: 'http://localhost:5000/api/'
 });
 export const quizApi = {
     async getAllQuiz() {
