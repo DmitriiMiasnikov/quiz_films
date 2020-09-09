@@ -5,7 +5,7 @@ const defaultState = {
         { en: 'All quiz', ru: 'Все тесты' },
         { en: 'Films', ru: 'Фильмы' },
         { en: 'Serials', ru: 'Сериалы' },
-        { en: 'Registration', ru: 'Регистрация' }
+        { en: 'Authorization', ru: 'Авторизация' }
     ],
     local: 'en'
 }

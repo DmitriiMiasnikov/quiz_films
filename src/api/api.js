@@ -19,12 +19,12 @@ export const quizApi = {
 }
 
 export const authApi = {
-    async me(email, password, rememberme) {
-        const response = await instance.get(`auth/me`, { email, password, rememberme })
+    async me(email, password) {
+        const response = await instance.get(`auth/me`, { email, password })
         return response.data;
     },
-    async login(email, password, rememberme) {
-        const response = await instance.post(`auth/login`, { email, password, rememberme })
+    async login(email, password) {
+        const response = await instance.post(`auth/login`, { email, password })
         return response.data;
     },
     async logout() {

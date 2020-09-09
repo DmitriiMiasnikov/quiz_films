@@ -13,8 +13,8 @@ const LoginForm = (props) => {
               <Field name="login">
                 {({ input, meta }) => (
                   <div>
-                    <label>Логин:</label>
-                    <input {...input} type="text" placeholder="Login" />
+                    <label>{props.local === 'en' ? 'Login:' : 'Логин:'}</label>
+                    <input {...input} type="text" placeholder={props.local === 'en' ? 'email' : 'Введите email'} />
                     {meta.error && meta.touched && <span className={styles.error}>{meta.error}</span>}
                   </div>
                 )}
@@ -24,32 +24,15 @@ const LoginForm = (props) => {
               <Field name="password">
                 {({ input, meta }) => (
                   <div>
-                    <label>Пароль:</label>
-                    <input {...input} type="text" placeholder="Password" type='password' />
+                    <label>{props.local === 'en' ? 'Password:' : 'Пароль:'}</label>
+                    <input {...input} type="text" placeholder={props.local === 'en' ? 'password' : 'Введите пароль'} type='password' />
                     {meta.error && meta.touched && <span className={styles.error}>{meta.error}</span>}
                   </div>
                 )}
               </Field>
-            </div>
-            <div className={styles.line}>
-              <Field name="repeatPassword">
-                {({ input, meta }) => (
-                  <div>
-                    <label>Повторите:</label>
-                    <input {...input} type="text" placeholder="Password" type='password' />
-                    {meta.error && meta.touched && <span className={styles.error}>{meta.error}</span>}
-                  </div>
-                )}
-              </Field>
-            </div>
-            <div className={`${styles.line} ${styles.checkbox}`}>
-              <label></label>
-              <div>
-                <Field name='rememberme' value={true} component='input' type='checkbox' />
-              Запомнить меня</div>
             </div>
             <div className={`${styles.line} ${styles.button}`}>
-              <button type='submit' disabled={submitting}>Login</button>
+              <button type='submit' disabled= {submitting}>Login</button>
               <button onClick={form.reset}>Clear forms</button>
             </div>
           </form>
@@ -63,7 +46,7 @@ const LoginForm = (props) => {
     //   return <Redirect to={'/mainpage'}/>
     // }
     return <div className={styles.wrapper}>
-      <div className={styles.title}>Регистрация:</div>
+      <div className={styles.title}>{props.local === 'en' ? 'Authorization' : 'Авторизация:'}</div>
       <LoginForm {...props} />
     </div>
   }

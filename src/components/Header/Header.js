@@ -13,7 +13,9 @@ const Header = (props) => {
                 </div>
                 {
                     props.menuItems.map((el, i) => {
-                        return <div className={styles.item} key={i}
+                        return <div className={classnames(styles.item, {
+                            [styles.auth]: el.en === 'Authorization'
+                        })} key={i}
                             onClick={() => props.setQuizListFunc(`${el.en.toLowerCase().split(' ').join('_')}`)} >
                             <NavLink to={`/${el.en.toLowerCase().split(' ').join('_')}`}
                                 activeClassName={styles.active}>

@@ -19,6 +19,10 @@ $button_height: 30px;
             height: inherit;
             align-items: center;
             font-size: 22px;
+            &.auth {
+                float: right;
+                margin-right: 140px;
+            }
             a {
                 text-decoration: none;
                 color: #202435;

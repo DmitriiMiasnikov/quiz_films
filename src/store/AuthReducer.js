@@ -44,17 +44,17 @@ export const getAuthUserData = () => {
 export const changeTextInput = (data) => {
     return { type: VALIDATE_REGISTRATION, data: data }
 }
-export const login = (email, password, rememberme) => {
+export const login = (email, password) => {
     return async (dispatch) => {
-        const response = await authApi.login(email, password, rememberme);
+        const response = await authApi.login(email, password);
         if (response.resultCode === 0) {
             dispatch(getAuthUserData())
         }
     }
 }
-export const logout = (email, password, rememberme) => {
+export const logout = (email, password) => {
     return async (dispatch) => {
-        const response = await authApi.logout(email, password, rememberme)
+        const response = await authApi.logout(email, password)
             if (response.resultCode === 0) {
                 dispatch(setAuthUserData(null, null, null, false))
             }
