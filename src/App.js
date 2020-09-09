@@ -25,7 +25,7 @@ const App = (props) => {
         <Route path='/all_quiz' render={() => <QuizList />} />
         <Route path='/films' render={() => <QuizList />} />
         <Route path='/serials' render={() => <QuizList />} />
-        <Route path='/auth' render={() => <Auth />} />
+        <Route path='/registration' render={() => <Auth />} />
         <Route path='/quiz/:name?' render={() => <Quiz />} />
       </div>
       <Footer />

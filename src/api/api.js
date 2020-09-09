@@ -17,3 +17,18 @@ export const quizApi = {
         return response.filter(el => el.type === 'serials');
     }
 }
+
+export const authApi = {
+    async me(email, password, rememberme) {
+        const response = await instance.get(`auth/me`, { email, password, rememberme })
+        return response.data;
+    },
+    async login(email, password, rememberme) {
+        const response = await instance.post(`auth/login`, { email, password, rememberme })
+        return response.data;
+    },
+    async logout() {
+        const response = await instance.delete(`auth/login`)
+        return response.data;
+    },
+}
