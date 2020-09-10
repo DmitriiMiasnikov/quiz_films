@@ -32,7 +32,7 @@ const LoginForm = (props) => {
               </Field>
             </div>
             <div className={`${styles.line} ${styles.button}`}>
-              <button type='submit' disabled= {submitting}>Login</button>
+              <button type='submit'>Login</button>
               <button onClick={form.reset}>Clear forms</button>
             </div>
           </form>

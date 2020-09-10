@@ -5,17 +5,9 @@ const instance = axios.create({
 });
 export const quizApi = {
     async getAllQuiz() {
-        const response = await instance.get('quiz')
-        return response;
+        const response = await instance.get('quiz/getAll')
+        return response.data;
     },
-    async getFilmsQuiz() {
-        const response = await instance.get('quiz')
-        return response.filter(el => el.type === 'films');
-    },
-    async getSerialsQuiz() {
-        const response = await instance.get('quiz')
-        return response.filter(el => el.type === 'serials');
-    }
 }
 
 export const authApi = {
@@ -25,6 +17,10 @@ export const authApi = {
     },
     async login(email, password) {
         const response = await instance.post(`auth/login`, { email, password })
+        return response.data;
+    },
+    async registration(email, password) {
+        const response = await instance.post(`auth/registration`, { email, password })
         return response.data;
     },
     async logout() {

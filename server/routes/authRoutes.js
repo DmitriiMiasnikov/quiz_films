@@ -32,9 +32,10 @@ router.post(
             const user = new User({ email, password: hashedPassword })
             await user.save()
 
-            res.status(201, json({ message: 'user has been created' }))
+            res.status(201).json({ message: 'user has been created' })
 
         } catch (e) {
+            console.log(e)
             res.status(500).json({ message: 'something wrong, try again' })
         }
     })

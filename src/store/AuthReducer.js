@@ -52,6 +52,14 @@ export const login = (email, password) => {
         }
     }
 }
+export const registration = (email, password) => {
+    return async (dispatch) => {
+        const response = await authApi.registration(email, password);
+        if (response.resultCode === 0) {
+            dispatch(getAuthUserData())
+        }
+    }
+}
 export const logout = (email, password) => {
     return async (dispatch) => {
         const response = await authApi.logout(email, password)
