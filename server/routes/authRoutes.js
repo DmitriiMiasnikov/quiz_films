@@ -59,10 +59,9 @@ router.post(
             }
             const {email, password} = req.body
             const user = await User.findOne({email})
-            if (!User) {
+            if (!user) {
                 return res.status(400).json({message: 'User is not found'})
             }
-
             const isMatch = await bcrypt.compare(password, user.password)
 
             if (!isMatch) {
@@ -78,6 +77,7 @@ router.post(
             res.json({token, userId: user.id})
 
         } catch (e) {
+            console.log(e)
             res.status(500).json({ message: 'something wrong, try again' })
         }
     })

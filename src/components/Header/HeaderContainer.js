@@ -16,7 +16,8 @@ const HeaderContainer = (props) => {
 const mapStateToProps = (state) => {
     return {
         menuItems: state.header.menuItems,
-        local: state.header.local
+        local: state.header.local,
+        authItems: state.header.authItems
     }
 }
 export default connect(mapStateToProps, { switchLocal, setQuizList, clear })(HeaderContainer);

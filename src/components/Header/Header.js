@@ -13,9 +13,7 @@ const Header = (props) => {
                 </div>
                 {
                     props.menuItems.map((el, i) => {
-                        return <div className={classnames(styles.item, {
-                            [styles.auth]: el.en === 'Authorization'
-                        })} key={i}
+                        return <div className={classnames(styles.item)} key={i}
                             onClick={() => props.setQuizListFunc(`${el.en.toLowerCase().split(' ').join('_')}`)} >
                             <NavLink to={`/${el.en.toLowerCase().split(' ').join('_')}`}
                                 activeClassName={styles.active}>
@@ -24,6 +22,19 @@ const Header = (props) => {
                         </div>
                     })
                 }
+                <div className = {styles.authBlock}>
+                {
+                    props.authItems.map((el, i) => {
+                        return <div className={classnames(styles.itemRight)} key={i}
+                            onClick={() => props.setQuizListFunc(`${el.en.toLowerCase().split(' ').join('_')}`)} >
+                            <NavLink to={`/${el.en.toLowerCase().split(' ').join('_')}`}
+                                activeClassName={styles.active}>
+                                {props.local === 'en' ? el.en : el.ru}
+                            </NavLink>
+                        </div>
+                    })
+                }
+                </div>
                 <LocalButton switchLocal={props.switchLocal} local={props.local} />
             </div>
 

@@ -19,10 +19,6 @@ $button_height: 30px;
             height: inherit;
             align-items: center;
             font-size: 22px;
-            &.auth {
-                float: right;
-                margin-right: 140px;
-            }
             a {
                 text-decoration: none;
                 color: #202435;
@@ -32,6 +28,33 @@ $button_height: 30px;
                 }
                 &.active {
                     color: #40486D;
+                }
+            }
+        }
+        .authBlock {
+            display: inline-flex;
+            float: right;
+            height: inherit;
+            align-items: center;
+            .itemRight {
+                display: inline-flex;
+                padding: 0 20px;
+                height: inherit;
+                align-items: center;
+                font-size: 22px;
+                &:nth-child(2) {
+                    margin-right: 90px;
+                }
+                a {
+                    text-decoration: none;
+                    color: #202435;
+                    transition: .1s text-shadow;
+                    &:hover {
+                        text-shadow: 1px 1px 8px #2e344d;
+                    }
+                    &.active {
+                        color: #40486D;
+                    }
                 }
             }
         }

@@ -9,6 +9,7 @@ import QuizList from './components/QuizList/QuizListContainer';
 import { connect } from "react-redux";
 import { getAllQuizThunk } from './store/mainPageReducer'
 import Auth from './components/Auth/AuthContainer';
+import Registration from './components/Registration/RegistrationContainer';
 
 const App = (props) => {
   useEffect(() => {
@@ -24,6 +25,7 @@ const App = (props) => {
         <Route path='/films' render={() => <QuizList />} />
         <Route path='/serials' render={() => <QuizList />} />
         <Route path='/authorization' render={() => <Auth />} />
+        <Route path='/registration' render={() => <Registration />} />
         <Route path='/quiz/:name?' render={() => <Quiz />} />
       </div>
       <Footer />
