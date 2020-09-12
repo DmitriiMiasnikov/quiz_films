@@ -26,7 +26,7 @@ const Header = (props) => {
                 {
                     props.authItems.map((el, i) => {
                         return <div className={classnames(styles.itemRight)} key={i}
-                            onClick={() => props.setQuizListFunc(`${el.en.toLowerCase().split(' ').join('_')}`)} >
+                            onClick={() => props.getMessage(null)} >
                             <NavLink to={`/${el.en.toLowerCase().split(' ').join('_')}`}
                                 activeClassName={styles.active}>
                                 {props.local === 'en' ? el.en : el.ru}

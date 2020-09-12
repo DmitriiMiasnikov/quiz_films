@@ -32,8 +32,11 @@ const LoginForm = (props) => {
               </Field>
             </div>
             <div className={`${styles.line} ${styles.button}`}>
-              <button type='submit'>Login</button>
+              <button type='submit'>Register</button>
               <button onClick={form.reset}>Clear forms</button>
+            </div>
+            <div className={`${styles.line} ${styles.result}`}>
+                  {props.message}
             </div>
           </form>
         )}

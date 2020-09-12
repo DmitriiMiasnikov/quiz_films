@@ -35,6 +35,9 @@ const LoginForm = (props) => {
               <button type='submit'>Login</button>
               <button onClick={form.reset}>Clear forms</button>
             </div>
+            <div className={`${styles.line} ${styles.result}`}>
+                  {props.message}
+            </div>
           </form>
         )}
       />

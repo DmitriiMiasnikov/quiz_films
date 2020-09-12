@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import React from 'react';
 import Auth from './Auth';
-import { changeTextInput, login, logout } from '../../store/AuthReducer';
+import { changeTextInput, login, logout } from '../../store/authReducer';
 
 const AuthContainer = (props) => {
     const onSubmit = (data) => {
@@ -23,6 +23,7 @@ const AuthContainer = (props) => {
 const mapStateToProps = (state) => {
     return {
         local: state.header.local,
+        message: state.auth.message
     }
 }
 
