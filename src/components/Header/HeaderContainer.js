@@ -11,7 +11,10 @@ const HeaderContainer = (props) => {
         props.clear();
         props.setQuizList(quiz);
     }
-    return <Header {...props} setQuizListFunc = {setQuizListFunc}/>
+    const clearList = () => {
+        props.clear();
+    }
+    return <Header {...props} setQuizListFunc = {setQuizListFunc} clearList = {clearList}/>
 }
 
 const mapStateToProps = (state) => {

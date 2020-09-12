@@ -8,7 +8,8 @@ const Header = (props) => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.items}>
-                <div className={classnames(styles.icon, styles.item)}>
+                <div className={classnames(styles.icon, styles.item)}
+                    onClick={() => props.clearList()}>
                     <NavLink to='/main'>quiz-films</NavLink>
                 </div>
                 {
@@ -22,18 +23,18 @@ const Header = (props) => {
                         </div>
                     })
                 }
-                <div className = {styles.authBlock}>
-                {
-                    props.authItems.map((el, i) => {
-                        return <div className={classnames(styles.itemRight)} key={i}
-                            onClick={() => props.getMessage(null)} >
-                            <NavLink to={`/${el.en.toLowerCase().split(' ').join('_')}`}
-                                activeClassName={styles.active}>
-                                {props.local === 'en' ? el.en : el.ru}
-                            </NavLink>
-                        </div>
-                    })
-                }
+                <div className={styles.authBlock}>
+                    {
+                        props.authItems.map((el, i) => {
+                            return <div className={classnames(styles.itemRight)} key={i}
+                                onClick={() => props.getMessage(null)} >
+                                <NavLink to={`/${el.en.toLowerCase().split(' ').join('_')}`}
+                                    activeClassName={styles.active}>
+                                    {props.local === 'en' ? el.en : el.ru}
+                                </NavLink>
+                            </div>
+                        })
+                    }
                 </div>
                 <LocalButton switchLocal={props.switchLocal} local={props.local} />
             </div>

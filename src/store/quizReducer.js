@@ -3,7 +3,6 @@ const GET_QUIZ = 'GET_QUIZ';
 const CHECK_ANSWER = 'CHECK_ANSWER';
 const RESULT_TEXT = 'RESULT_TEXT';
 const CLEAR = 'CLEAR';
-const RANDOMIZE_OPTIONS = 'RANDOMIZE_OPTIONS';
 const TOGGLE_INACTIVE_BUTTONS = 'TOGGLE_INACTIVE_BUTTONS';
 const GET_RANDOM_QUIZ = 'GET_RANDOM_QUIZ';
 
@@ -28,9 +27,6 @@ const quizReducer = (state = defaultState, action) => {
         }
         case (GET_RANDOM_QUIZ): {
             return { ...state, currentQuiz: action.currentQuiz, hideArrow: true }
-        }
-        case (RANDOMIZE_OPTIONS): {
-            return { ...state, currentQuiz: action.currentQuiz }
         }
         case (CHECK_ANSWER): {
             return {
@@ -69,9 +65,6 @@ export const getQuiz = (currentQuiz) => {
 }
 export const getRandomQuiz = (currentQuiz) => {
     return { type: GET_RANDOM_QUIZ, currentQuiz }
-}
-export const randomizeOptions = (currentQuiz) => {
-    return { type: GET_QUIZ, currentQuiz }
 }
 export const checkAnswer = (answer, step, answersArr, item) => {
     return { type: CHECK_ANSWER, answer, step, answersArr, item }
