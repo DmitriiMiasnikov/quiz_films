@@ -149,17 +149,88 @@
 //     let arrA = {};
 //     let arrB = {};
 //     a.split('').forEach(el => {
-//       if (arrA[el]) {
-//         arrA[el]++
-//       } else arrA[el] = 1
+//         if (arrA[el]) {
+//             arrA[el]++
+//         } else arrA[el] = 1
 //     })
 //     b.split('').forEach(el => {
-//       if (arrB[el]) {
-//         arrB[el]++
-//       } else arrB[el] = 1
+//         if (arrB[el]) {
+//             arrB[el]++
+//         } else arrB[el] = 1
 //     })
 //     if (Object.keys(arrA).every(el => (arrA[el] === arrB[el]))) {
-//       return true
+//         return true
 //     } else return false
-//   }
-//   console.log(equil('acc', 'cba'))
+// }
+// console.log(equil('acc', 'cba'))
+
+// function justifyContent(textArr, length) {
+//     if (length > textArr.join('').length) {
+//         let text = textArr;
+//       const lengthStr = text.join('').length;
+//       const needSpaces = length - lengthStr;
+//       const spacesInStr = text.length - 1;
+//       const NeedSpacesBeetwen = [];
+//       const spaces = Math.floor(needSpaces / spacesInStr)
+//       for(let i = 0; i < spacesInStr; i ++) {
+//         if (i < (needSpaces % spacesInStr)) {
+//             NeedSpacesBeetwen.push(spaces + 1)
+//         } else NeedSpacesBeetwen.push(spaces)
+//       }
+//       if (text.length === 1) {
+//         NeedSpacesBeetwen.push(2)
+//     }
+//     for(let i = 0; i <= NeedSpacesBeetwen.length; i++) {
+//       if (text.length === 1 && i === NeedSpacesBeetwen.length) {
+//                 break;
+//       }
+//             text[i] = text[i] + ' '.repeat(NeedSpacesBeetwen[i])
+//      }
+//         return text.join('');
+//     } else {
+//         let text = textArr;
+//       const lengthStr = text.join('').length;
+//       const lines = 3;
+//       const needSpaces = (length * lines) - lengthStr;
+//       let newTextLines = [];
+//       for(let i = 0; i < lines; i++) {
+//             newTextLines.push([])
+//      }
+//       let lineLength = 0;
+//       let line = 0;
+//       text.forEach((el, i) => {
+//           if (lineLength + el.length < length) {
+//         lineLength += el.length + 1;
+//         newTextLines[line].push(el)
+//             } else {
+//             lineLength = 0
+//             line += 1;
+//           newTextLines[line].push(el)
+//             }
+//       })
+//          newTextLines = newTextLines.map((el, i) => {
+//         let text = el;
+//         const lengthStr = text.join('').length;
+//         const needSpaces = length - lengthStr;
+//         const spacesInStr = text.length - 1;
+//         const NeedSpacesBeetwen = [];
+//         const spaces = Math.floor(needSpaces / spacesInStr)
+//         for(let i = 0; i < spacesInStr; i ++) {
+//           if (i < (needSpaces % spacesInStr)) {
+//               NeedSpacesBeetwen.push(spaces + 1)
+//           } else NeedSpacesBeetwen.push(spaces)
+//         }
+//         if (text.length === 1) {
+//         NeedSpacesBeetwen.push(2)
+//       }
+//       for(let i = 0; i <= NeedSpacesBeetwen.length; i++) {
+//         if (text.length === 1 && i === NeedSpacesBeetwen.length) {
+//             break;
+//         }
+//           text[i] = text[i] + ' '.repeat(NeedSpacesBeetwen[i])
+//        }
+//         return text.join('');
+//         })
+//         return newTextLines
+//       }
+//     }
